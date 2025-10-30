@@ -1,0 +1,18 @@
+[
+  {
+    "id": "azimuth-laser-pistol",
+    "slug": "azimuth-laser-pistol",
+    "name": "Лазерный пистолет Азимут",
+    "type": "Оружие",
+    "source": "CRB",
+    "description": "Бюджетное энергетическое оружие начального уровня."
+  },
+  {
+    "id": "estex-suit-i",
+    "slug": "estex-suit-i",
+    "name": "Костюм Эстекс I",
+    "type": "Броня",
+    "source": "CRB",
+    "description": "Лёгкая броня с базовой защитой."
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "conditions",
+    "slug": "conditions",
+    "name": "Состояния",
+    "type": "Правила",
+    "source": "CRB",
+    "description": "Описание состояний: ослеплён, оглушён, испуган и т.д."
+  },
+  {
+    "id": "combat-actions",
+    "slug": "combat-actions",
+    "name": "Боевые действия",
+    "type": "Правила",
+    "source": "CRB",
+    "description": "Стандартные, передвижение, полное действие, реакции."
+  }
+]

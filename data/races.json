@@ -1,0 +1,18 @@
+[
+  {
+    "id": "human",
+    "slug": "human",
+    "name": "Человек",
+    "type": "Раса",
+    "source": "CRB",
+    "description": "Адаптивные и амбициозные."
+  },
+  {
+    "id": "vesk",
+    "slug": "vesk",
+    "name": "Веск",
+    "type": "Раса",
+    "source": "CRB",
+    "description": "Воинственная рептилоидная раса с кодексом чести."
+  }
+]
