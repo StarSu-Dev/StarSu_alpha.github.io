@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StarSu</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Кнопка гамбургера -->
+    <button id="sidebar-toggle" class="sidebar-toggle">☰</button>
+
+    <!-- Сайдбар -->
+    <aside class="sidebar" id="sidebar">
+      <h3>StarSu</h3>
+      <ul>
+        <li><a href="#" data-section="home">Главная</a></li>
+        <li><a href="#" data-section="races">Расы</a></li>
+        <li><a href="#" data-section="classes">Классы</a></li>
+        <li><a href="#" data-section="themes">Темы</a></li>
+        <li><a href="#" data-section="traits">Черты</a></li>
+        <li><a href="#" data-section="equipment">Снаряжение</a></li>
+      </ul>
+    </aside>
+
+    <!-- Основной контент -->
+    <main class="main-content" id="main-content">
+      <h1>Справочник по Starfinder</h1>
+      <p></p>
+
+      <div class="cards-container">
+        <div class="card" data-section="races">
+          <h3>Расы</h3>
+          <p>Узнайте о различных расах, доступных персонажам.</p>
+        </div>
+        <div class="card" data-section="classes">
+          <h3>Классы</h3>
+          <p>Описание всех классов и их особенностей.</p>
+        </div>
+        <div class="card" data-section="themes">
+          <h3>Темы</h3>
+          <p>Фоновые истории и бонусы от тем.</p>
+        </div>
+        <div class="card" data-section="traits">
+          <h3>Черты</h3>
+          <p>Уникальные способности и особенности персонажа.</p>
+        </div>
+        <div class="card" data-section="equipment">
+          <h3>Снаряжение</h3>
+          <p>Оружие, броня, гаджеты и магические предметы.</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Сначала данные -->
+    <script src="races-data.js"></script>
+    <script src="classes-data.js"></script>
+    <script src="themes-data.js"></script>
+    <script src="traits-data.js"></script>
+    <script src="equipment-data.js"></script>
+
+    <!-- Потом логика -->
+    <script src="script.js"></script>
+  </body>
+</html>

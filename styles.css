@@ -1,0 +1,254 @@
+:root {
+  --bg-color: #f5f7fa;
+  --text-color: #333;
+  --card-bg: #ffffff;
+  --sidebar-bg: #eef2f7;
+  --border-color: #d1d5db;
+  --accent-color: #4f46e5;
+  --sidebar-text: #4b5563;
+  --sidebar-width: 250px;
+}
+
+.dark-mode {
+  --bg-color: #1e293b;
+  --text-color: #f1f5f9;
+  --card-bg: #334155;
+  --sidebar-bg: #0f172a;
+  --border-color: #475569;
+  --accent-color: #818cf8;
+  --sidebar-text: #cbd5e1;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Кнопка гамбургера */
+.sidebar-toggle {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Сайдбар */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--sidebar-bg);
+  padding: 20px;
+  padding-top: 70px; /* Отступ под кнопку гамбургера */
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  color: var(--sidebar-text);
+  border-right: 1px solid var(--border-color);
+  z-index: 90;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 5px 0;
+}
+
+.sidebar a {
+  color: var(--sidebar-text);
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Кнопка смены темы — только иконка */
+.theme-toggle-btn {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.theme-toggle-btn::before {
+  content: "☀️";
+  font-size: 18px;
+}
+
+.dark-mode .theme-toggle-btn::before {
+  content: "🌙";
+}
+
+/* Позиция кнопки темы в основном контенте */
+.main-content .theme-toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+/* Основной контент */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  position: relative;
+}
+
+.main-content h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+/* Карточки */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Ровно 3 колонки на десктопе */
+  gap: 40px; /* Увеличенное расстояние между карточками */
+  margin-top: 24px;
+  max-width: 1000px; /* Ограничиваем ширину для центрирования */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 16px; /* Небольшой отступ по бокам на узких экранах */
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 5px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  width: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  margin: 0;
+  color: var(--accent-color);
+  font-size: 1.1em;
+}
+
+.card p {
+  color: var(--text-color);
+  opacity: 0.8;
+  font-size: 0.9em;
+}
+.card-source {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.75em;
+  opacity: 0.7;
+  color: var(--text-color);
+}
+
+/* Детальный контент */
+.detail-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.detail-content h2 {
+  margin-top: 0;
+}
+
+.detail-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  font-size: 0.9em;
+  display: block;
+  overflow-x: auto;
+}
+
+.detail-content th,
+.detail-content td {
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  text-align: left;
+  min-width: 100px;
+}
+
+.detail-content th {
+  background-color: var(--accent-color);
+  color: white;
+}
+.race-stats {
+  background: var(--card-bg);
+  padding: 12px;
+  border-radius: 6px;
+  font-family: monospace;
+  white-space: pre-line;
+  margin: 15px 0;
+  border: 1px solid var(--border-color);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70%;
+    max-width: 300px;
+    padding-top: 60px;
+  }
+
+  .main-content {
+    padding: 70px 16px 20px;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .detail-content table {
+    font-size: 0.8em;
+  }
+
+  .main-content .theme-toggle-btn {
+    top: 10px;
+    right: 10px;
+  }
+}
